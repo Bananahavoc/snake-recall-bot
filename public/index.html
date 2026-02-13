@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recall Snake</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="stage">
+      <header class="top-bar">
+        <div>
+          <h1>Group Snake</h1>
+          <p>Speak commands: up, down, left, right, start, restart, resume</p>
+        </div>
+        <div class="pill-row">
+          <div id="statePill" class="pill waiting">WAITING</div>
+          <div id="scorePill" class="pill">Score: 0</div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="board">
+          <canvas id="gameCanvas"></canvas>
+
+          <div id="waitingOverlay" class="overlay">
+            <div class="overlay-card">
+              <h2>Waiting Room</h2>
+              <p>Say <strong>start</strong> or <strong>resume</strong> to begin the game.</p>
+            </div>
+          </div>
+
+          <div id="deathOverlay" class="overlay hidden">
+            <div class="loser-frame">
+              <img id="loserImage" alt="Last commander" />
+              <div class="loser-label">LOSER</div>
+              <div id="loserName" class="loser-name"></div>
+            </div>
+            <div class="overlay-footer">Say <strong>restart</strong> to play again.</div>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel">
+            <h3>Last Command</h3>
+            <p id="lastCommand">None yet</p>
+          </section>
+
+          <section class="panel">
+            <h3>Participants</h3>
+            <div id="participants" class="participants"></div>
+          </section>
+
+          <section class="panel">
+            <h3>Command Feed</h3>
+            <ul id="commandLog" class="command-log"></ul>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
